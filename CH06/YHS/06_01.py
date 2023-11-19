@@ -129,7 +129,7 @@ krw = bithumb.get_balance("BTC")[2] # 원화 잔고
 orderbook = pybithumb.get_orderbook("BTC")
 
 asks = orderbook['asks'] # 매수 호가 내역
-sell_price = asks[0]['price'] # 메도 금액
+sell_price = asks[0]['price'] # 매도 금액
 unit = krw/sell_price # 원화 잔고/최우선 매도 호가 금액 = 매수 수량
 print(unit)
 
@@ -175,7 +175,7 @@ sec_key = config.get('sec_key', None)
 bithumb = pybithumb.Bithumb(con_key, sec_key)
 
 order = bithumb.sell_limit_order("BTC", 4000000, 1)
-print(order) ## {'status': '5600', 'message': '회원 자산을 가져올수없습니다. 잠시후 이용 부탁드립니다.'}
+print(order) ## {'status': '5600', 'message': '회원 자산을 가져올수없습니다. 잠시후 이용 부탁드립니다.'} => ??
 
 ## 잔고를 조회해서 보유 중인 비트코인 수량만큼 지정가 매도 주문
 import os
@@ -229,7 +229,7 @@ sec_key = config.get('sec_key', None)
 
 bithumb = pybithumb.Bithumb(con_key, sec_key)
 
-order = bithumb.buy_limit_order("BTC", 3000000, 0.001 )
+order = bithumb.buy_limit_order("BTC", 471700, 0.001 )
 print(order)
 
 time.sleep(10)
